@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>AfrCom Exchange · Africa's Trusted Commodity Partner</title>
 
-    <!-- Google Fonts — Playfair Display + Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
         /* =====================================================
-              ROOT — MATCHING MAIN LOGO: BLUE + LIGHT GOLD
+              ROOT — BLUE + GOLD THEME
               ===================================================== */
         * {
             margin: 0;
@@ -54,7 +52,7 @@
         }
 
         /* =====================================================
-              GLASSMORPHISM — CRYSTAL CLEAR
+              GLASSMORPHISM
               ===================================================== */
         .glass {
             background: var(--glass-bg);
@@ -128,7 +126,7 @@
         }
 
         /* =====================================================
-              SECTION HEADERS — BLUE/GOLD THEME
+              SECTION HEADERS
               ===================================================== */
         .section-header {
             text-align: center;
@@ -162,7 +160,7 @@
         }
 
         /* =====================================================
-              NAVBAR — WITH LOGOS FROM CDN (LOGO SLIGHTLY BIGGER)
+              NAVBAR
               ===================================================== */
         .navbar {
             display: flex;
@@ -185,7 +183,6 @@
         }
         .main-logo {
             height: 65px;
-            /* Increased from 55px */
             width: auto;
             filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.2));
         }
@@ -250,7 +247,7 @@
         }
 
         /* =====================================================
-              HERO — WITH CDN BACKGROUND
+              HERO
               ===================================================== */
         .hero {
             min-height: 80vh;
@@ -372,7 +369,7 @@
         }
 
         /* =====================================================
-              CATEGORIES — WITH CDN BACKGROUND
+              CATEGORIES
               ===================================================== */
         .categories {
             padding: 80px 0;
@@ -420,14 +417,90 @@
         }
 
         /* =====================================================
-              REAL-TIME STOCK — WITH CDN BACKGROUND
+              PRELOADED VIDEOS SECTION
+              ===================================================== */
+        .videos-section {
+            padding: 80px 0;
+            margin: 0 24px 60px;
+            border-radius: 40px;
+            background: linear-gradient(145deg, rgba(10, 15, 26, 0.85), rgba(10, 15, 26, 0.95)),
+                url('https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/images/background-3.JPG') center/cover no-repeat;
+            border: 1px solid rgba(0, 102, 255, 0.06);
+        }
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 32px;
+        }
+        .video-card {
+            border-radius: 24px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(0, 102, 255, 0.06);
+            transition: all 0.35s;
+        }
+        .video-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+        }
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            background: #000;
+            cursor: pointer;
+        }
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: #000;
+        }
+        .video-wrapper .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 64px;
+            opacity: 0.8;
+            transition: all 0.3s;
+            text-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            pointer-events: none;
+        }
+        .video-wrapper:hover .play-btn {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        .video-card .video-info {
+            padding: 20px 24px;
+        }
+        .video-card .video-info h3 {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+        .video-card .video-info p {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* =====================================================
+              REAL-TIME STOCK (LIVE LISTINGS FROM DASHBOARD)
               ===================================================== */
         .stock-section {
             padding: 80px 0;
             margin: 0 24px 60px;
             border-radius: 40px;
             background: linear-gradient(145deg, rgba(10, 15, 26, 0.85), rgba(10, 15, 26, 0.95)),
-                url('https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/images/background-3.JPG') center/cover no-repeat;
+                url('https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/images/background-1.JPG') center/cover no-repeat;
             border: 1px solid rgba(0, 102, 255, 0.06);
         }
         .stock-grid {
@@ -451,8 +524,6 @@
             transform: translateY(-6px);
             box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
         }
-
-        /* Video & Image styles for stock cards */
         .stock-media {
             height: 220px;
             border-bottom: 1px solid rgba(212, 175, 55, 0.08);
@@ -538,7 +609,6 @@
             color: var(--gold);
             opacity: 0.4;
         }
-
         .stock-body {
             padding: 24px;
             flex: 1;
@@ -649,7 +719,7 @@
             margin: 0 24px 60px;
             border-radius: 40px;
             background: linear-gradient(145deg, rgba(10, 15, 26, 0.85), rgba(10, 15, 26, 0.95)),
-                url('https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/images/background-1.JPG') center/cover no-repeat;
+                url('https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/images/background-2.JPG') center/cover no-repeat;
             border: 1px solid rgba(0, 102, 255, 0.06);
         }
         .why-grid {
@@ -698,7 +768,7 @@
         }
 
         /* =====================================================
-              PARTNERS SECTION — LOGOS ONLY, NO SA FLAGS
+              PARTNERS SECTION — UPDATED LOGOS
               ===================================================== */
         .partners-section {
             padding: 60px 0;
@@ -742,14 +812,14 @@
         }
 
         /* =====================================================
-              CONTACT — BIGGER MAP
+              CONTACT
               ===================================================== */
         .contact-section {
             padding: 80px 0;
             margin: 0 24px 60px;
             border-radius: 40px;
             background: linear-gradient(145deg, rgba(10, 15, 26, 0.85), rgba(10, 15, 26, 0.95)),
-                url('https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/images/background-2.JPG') center/cover no-repeat;
+                url('https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/images/background-3.JPG') center/cover no-repeat;
             border: 1px solid rgba(0, 102, 255, 0.06);
         }
         .contact-grid {
@@ -818,7 +888,7 @@
         }
 
         /* =====================================================
-              FOOTER — WITH POWERED BY MINDTECH
+              FOOTER
               ===================================================== */
         .footer {
             padding: 60px 24px 30px;
@@ -1021,12 +1091,14 @@
             .partners-section,
             .ticker,
             .footer,
-            .stock-section {
+            .stock-section,
+            .videos-section {
                 margin-left: 8px;
                 margin-right: 8px;
                 border-radius: 24px;
             }
-            .stock-grid {
+            .stock-grid,
+            .videos-grid {
                 grid-template-columns: 1fr;
             }
             .category-grid {
@@ -1064,38 +1136,30 @@
 <body>
 
     <!-- ============================================================
-    NAVIGATION — WITH LOGOS FROM CDN (LOGO SLIGHTLY BIGGER)
+    NAVBAR
     ============================================================ -->
     <nav class="navbar glass">
         <div class="navbar-left">
             <a href="#" class="brand">
-                <!-- MAIN LOGO FROM CDN (BIGGER: 65px) -->
-                <img class="main-logo"
-                src="https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/images/africom-logo.png"
-                alt="AfrCom Exchange Logo"
-                onerror="this.src='https://placehold.co/65x65/0066FF/D4AF37?text=AfrCom'" />
+                <img class="main-logo" src="https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/images/africom-logo.png" alt="AfrCom Exchange Logo" onerror="this.src='https://placehold.co/65x65/0066FF/D4AF37?text=AfrCom'" />
                 <span>AfrCom Exchange</span>
             </a>
         </div>
         <div class="navbar-right">
-            <!-- PARTNER LOGO FROM CDN -->
-            <img class="partner-logo"
-            src="https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/images/partner-logo.png"
-            alt="Partner Logo"
-            onerror="this.style.display='none'" />
+            <img class="partner-logo" src="https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/images/partner-logo.png" alt="Partner Logo" onerror="this.style.display='none'" />
             <ul class="nav-links">
                 <li><a href="#commodities">Commodities</a></li>
+                <li><a href="#videos">Videos</a></li>
                 <li><a href="#stock">Live Stock</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#stock" class="btn-nav">Browse Available Stock</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- ============================================================
-    HERO — WITH CDN BACKGROUND 1
+    HERO
     ============================================================ -->
     <section class="hero" id="home">
         <div class="hero-content">
@@ -1137,7 +1201,7 @@
     </div>
 
     <!-- ============================================================
-    CATEGORIES — WITH CDN BACKGROUND 2
+    CATEGORIES
     ============================================================ -->
     <section class="categories" id="commodities">
         <div class="container">
@@ -1167,7 +1231,30 @@
     </section>
 
     <!-- ============================================================
-    REAL-TIME STOCK — WITH CDN BACKGROUND 3
+    PRELOADED VIDEOS SECTION
+    ============================================================ -->
+    <section class="videos-section" id="videos">
+        <div class="container">
+            <div class="section-header">
+                <span class="label"><i class="fas fa-video" style="color: var(--gold);"></i> Latest Videos</span>
+                <h2>Site Visits &amp; Proof of Work</h2>
+                <p>Watch our latest site visits and commodity inspections across Africa. Click play to watch.</p>
+            </div>
+            <div class="videos-grid" id="preloadedVideos">
+                <!-- Videos will be rendered by JavaScript -->
+                <div class="loading-spinner" style="grid-column:1/-1;">
+                    <i class="fas fa-spinner"></i>
+                    Loading videos...
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#stock" class="glass-btn glass-btn-gold">Browse Available Stock →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    REAL-TIME STOCK (LIVE LISTINGS FROM DASHBOARD)
     ============================================================ -->
     <section class="stock-section" id="stock">
         <div class="container">
@@ -1238,7 +1325,7 @@
     </section>
 
     <!-- ============================================================
-    PARTNERS SECTION — LOGOS FROM CDN
+    PARTNERS SECTION — UPDATED (REMOVED SAMSMINA, TISA, JCCI, ITAC)
     ============================================================ -->
     <section class="partners-section" id="partners">
         <div class="container">
@@ -1248,68 +1335,32 @@
                 <p>AfrCom Exchange operates within recognised industry frameworks and maintains formal affiliations with key bodies governing African trade.</p>
             </div>
             <div class="partners-grid">
-                <!-- Partner 1: Main Partner Logo -->
+                <!-- Partner 1: Official Partner -->
                 <div class="partner-item">
-                    <img src="https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/images/partner-logo.png"
-                    alt="Official Partner"
-                    onerror="this.style.display='none'" />
+                    <img src="https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/images/partner-logo.png" alt="Official Partner" onerror="this.style.display='none'" />
                     <span class="partner-name">Official Partner</span>
                 </div>
                 <!-- Partner 2: AfCFTA -->
                 <div class="partner-item">
-                    <img src="https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/images/AfCFTA_image-removebg-preview.png"
-                    alt="AfCFTA"
-                    onerror="this.style.display='none'" />
+                    <img src="https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/images/AfCFTA_image-removebg-preview.png" alt="AfCFTA" onerror="this.style.display='none'" />
                     <span class="partner-name">AfCFTA</span>
                 </div>
                 <!-- Partner 3: DMRE -->
                 <div class="partner-item">
-                    <img src="https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/images/dmers_logo_image-removebg-preview.png"
-                    alt="DMRE"
-                    onerror="this.style.display='none'" />
+                    <img src="https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/images/dmers_logo_image-removebg-preview.png" alt="DMRE" onerror="this.style.display='none'" />
                     <span class="partner-name">DMRE</span>
                 </div>
                 <!-- Partner 4: AGOA -->
                 <div class="partner-item">
-                    <img src="https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/images/agoa_image_logo-removebg-preview.png"
-                    alt="AGOA"
-                    onerror="this.style.display='none'" />
+                    <img src="https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/images/agoa_image_logo-removebg-preview.png" alt="AGOA" onerror="this.style.display='none'" />
                     <span class="partner-name">AGOA</span>
-                </div>
-                <!-- Partner 5: SAMSMINA (placeholder) -->
-                <div class="partner-item">
-                    <img src="https://placehold.co/60x60/0066FF/FFFFFF?text=SAMSMINA"
-                    alt="SAMSMINA"
-                    onerror="this.src='https://placehold.co/60x60/0066FF/FFFFFF?text=SAMSMINA'" />
-                    <span class="partner-name">SAMSMINA</span>
-                </div>
-                <!-- Partner 6: TISA (placeholder) -->
-                <div class="partner-item">
-                    <img src="https://placehold.co/60x60/0066FF/FFFFFF?text=TISA"
-                    alt="TISA"
-                    onerror="this.src='https://placehold.co/60x60/0066FF/FFFFFF?text=TISA'" />
-                    <span class="partner-name">TISA</span>
-                </div>
-                <!-- Partner 7: JCCI (placeholder) -->
-                <div class="partner-item">
-                    <img src="https://placehold.co/60x60/0066FF/FFFFFF?text=JCCI"
-                    alt="Johannesburg Chamber of Commerce"
-                    onerror="this.src='https://placehold.co/60x60/0066FF/FFFFFF?text=JCCI'" />
-                    <span class="partner-name">JCCI</span>
-                </div>
-                <!-- Partner 8: ITAC (placeholder) -->
-                <div class="partner-item">
-                    <img src="https://placehold.co/60x60/0066FF/FFFFFF?text=ITAC"
-                    alt="ITAC"
-                    onerror="this.src='https://placehold.co/60x60/0066FF/FFFFFF?text=ITAC'" />
-                    <span class="partner-name">ITAC</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================================================
-    CONTACT — BIGGER MAP + FORMSUBMIT + CC MZOLISI
+    CONTACT
     ============================================================ -->
     <section class="contact-section" id="contact">
         <div class="container">
@@ -1320,14 +1371,11 @@
             </div>
             <div class="contact-grid">
                 <div>
-                    <!-- FORMSUBMIT FORM — CC to Mzolisi -->
                     <form class="contact-form" id="contactForm" action="https://formsubmit.co/info@techpro-inv.co.za" method="POST">
-                        <!-- Required FormSubmit fields -->
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_subject" value="AfrCom Exchange - New Enquiry from Website">
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_autoresponse" value="Thank you for contacting AfrCom Exchange. A representative will respond within 24 hours. WhatsApp: 073 516 6652">
-                        <!-- CC Mzolisi on all correspondence -->
                         <input type="hidden" name="_cc" value="mzolisi@techpro-inv.co.za">
                         <input type="hidden" name="_next" value="https://afrcom-exchange.onrender.com?success=true">
 
@@ -1339,7 +1387,6 @@
                         <button type="submit" class="glass-btn glass-btn-gold" style="width:100%;">Send Enquiry</button>
                     </form>
 
-                    <!-- Form Submit Success Message -->
                     <div id="formSuccess" class="form-submit-success">
                         <p style="color: var(--gold);">
                             <i class="fas fa-check-circle"></i>
@@ -1351,7 +1398,6 @@
                         </p>
                     </div>
 
-                    <!-- Form Submit Error Message -->
                     <div id="formError" class="form-submit-error">
                         <p style="color: #EF476F;">
                             <i class="fas fa-exclamation-circle"></i>
@@ -1368,12 +1414,10 @@
                     <div class="info-item"><i class="fas fa-map-marker-alt"></i><div><strong>Address</strong><br><span style="color:var(--text-secondary);">30 The Straight, Fourways, South Africa</span></div></div>
                     <div class="info-item" style="border-bottom:none;"><i class="fas fa-shield-alt"></i><div><strong>Verified &amp; Secure</strong><br><span style="color:var(--text-secondary);">POPIA compliant · ISO 27001 aligned</span></div></div>
                     <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
-                        <!-- Separate WhatsApp button for Mzolisi -->
                         <a href="https://wa.me/27735166652" target="_blank" class="glass-btn" style="background:rgba(37,211,102,0.08); border-color:#25D366; color:#25D366;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                         <a href="https://wa.me/27614173018" target="_blank" class="glass-btn" style="background:rgba(37,211,102,0.08); border-color:#25D366; color:#25D366;"><i class="fab fa-whatsapp"></i> Mzolisi</a>
                         <a href="mailto:info@techpro-inv.co.za" class="glass-btn"><i class="fas fa-envelope"></i> Email</a>
                     </div>
-                    <!-- LARGER MAP — FOURWAYS -->
                     <div class="map-container">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.7734!2d28.0194!3d-26.0245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9576b9f3b8f8b5%3A0x8b7f8b7f8b7f8b7f!2sFourways%2C%20Sandton%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="AfrCom Exchange Location — Fourways, South Africa"></iframe>
                     </div>
@@ -1383,7 +1427,7 @@
     </section>
 
     <!-- ============================================================
-    FOOTER — WITH PARTNER LOGO & POWERED BY MINDTECH
+    FOOTER
     ============================================================ -->
     <footer class="footer">
         <div class="container">
@@ -1418,15 +1462,10 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <!-- PARTNER LOGO IN FOOTER FROM CDN -->
-                <img src="https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/images/partner-logo.png"
-                alt="Partner Logo"
-                style="height:40px; width:auto; opacity:0.7;"
-                onerror="this.style.display='none'" />
+                <img src="https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/images/partner-logo.png" alt="Partner Logo" style="height:40px; width:auto; opacity:0.7;" onerror="this.style.display='none'" />
                 <p>© 2026 AfrCom Exchange. All rights reserved.</p>
                 <p style="font-size:11px;color:var(--text-muted);">Commodity prices are indicative only. Not financial advice.</p>
                 <p style="font-size:11px;color:var(--text-muted);margin-top:8px;">🔒 POPIA · GDPR Aligned · ISO 27001 Aligned · SOC 2 Aligned</p>
-                <!-- POWERED BY MINDTECH -->
                 <p class="powered-by">
                     Powered by <strong>MindTech Industries</strong> © 2026
                 </p>
@@ -1440,7 +1479,7 @@
     <div class="toast" id="toast"><i class="fas fa-check-circle"></i> <span id="toastMsg">Success!</span></div>
 
     <!-- ============================================================
-    JAVASCRIPT — FETCH FROM DASHBOARD + FORM HANDLING
+    JAVASCRIPT — FETCH FROM DASHBOARD + VIDEO HANDLING
     ============================================================ -->
     <script>
         // ============================================================
@@ -1449,8 +1488,84 @@
         // Replace with your actual JSON URL from the dashboard export
         const DATA_URL = 'https://afrcom-exchange-dashboard.onrender.com'; // Update this!
 
+        // Preloaded videos from the CDN
+        const PRELOADED_VIDEOS = [{
+            src: 'https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/AfrCom%20vids%20(1).mp4',
+            title: 'Site Visit: Northern Cape Mining Operations',
+            description: 'Footage from our recent site inspection in the Northern Cape, showcasing mining operations and quality assurance checks.'
+        }, {
+            src: 'https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/AfrCom%20vids%20(2).mp4',
+            title: 'Limpopo Agricultural Inspection',
+            description: 'Walkthrough of our agricultural partner\'s facilities in Limpopo, highlighting crop quality and export readiness.'
+        }, {
+            src: 'https://raw.githubusercontent.com/mindtechindustriesai-alt/image-cdn/main/AfrCom%20vids%20(3).mp4',
+            title: 'Durban Port Logistics & Export',
+            description: 'Behind-the-scenes look at our logistics operations at the Durban Port, ensuring seamless delivery to international buyers.'
+        }];
+
         // ============================================================
-        // FETCH & RENDER FUNCTION (UPDATED FOR VIDEO SUPPORT)
+        // RENDER PRELOADED VIDEOS
+        // ============================================================
+        function renderPreloadedVideos() {
+            const container = document.getElementById('preloadedVideos');
+            container.innerHTML = PRELOADED_VIDEOS.map((video, index) => `
+                    <div class="video-card">
+                        <div class="video-wrapper" onclick="playVideo(this)">
+                            <video src="${video.src}" muted preload="metadata" playsinline></video>
+                            <div class="play-btn"><i class="fas fa-play-circle"></i></div>
+                        </div>
+                        <div class="video-info">
+                            <h3>${video.title}</h3>
+                            <p>${video.description}</p>
+                        </div>
+                    </div>
+                `).join('');
+        }
+
+        // ============================================================
+        // VIDEO PLAY FUNCTION (FALLBACK PLAYBACK)
+        // ============================================================
+        function playVideo(wrapper) {
+            const video = wrapper.querySelector('video');
+            const playBtn = wrapper.querySelector('.play-btn');
+
+            if (video.paused) {
+                // Pause all other videos first
+                document.querySelectorAll('.video-wrapper video').forEach(v => {
+                    if (v !== video && !v.paused) {
+                        v.pause();
+                        const parent = v.closest('.video-wrapper');
+                        if (parent) {
+                            const btn = parent.querySelector('.play-btn');
+                            if (btn) btn.style.display = 'flex';
+                        }
+                    }
+                });
+
+                video.play();
+                if (playBtn) playBtn.style.display = 'none';
+            } else {
+                video.pause();
+                if (playBtn) playBtn.style.display = 'flex';
+            }
+
+            // When video ends, show play button again
+            video.onended = function() {
+                if (playBtn) playBtn.style.display = 'flex';
+            };
+
+            // Error handling
+            video.onerror = function() {
+                console.warn('Video failed to load:', video.src);
+                if (playBtn) {
+                    playBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
+                    playBtn.style.color = '#EF476F';
+                }
+            };
+        }
+
+        // ============================================================
+        // FETCH & RENDER STOCK FROM DASHBOARD (WITH VIDEO SUPPORT)
         // ============================================================
         async function fetchAndRenderListings() {
             const container = document.getElementById('stockGrid');
@@ -1480,7 +1595,6 @@
                             <div class="empty-state" style="grid-column:1/-1;">
                                 <i class="fas fa-box-open"></i>
                                 <p>No stock available at this time. Check back soon!</p>
-                                <p style="font-size:13px;color:var(--text-muted);margin-top:8px;">Stock is added from the owner dashboard.</p>
                             </div>
                         `;
                     return;
@@ -1513,7 +1627,7 @@
                         // Render video with play overlay
                         mediaHtml = `
                                 <video src="${l.video}" muted preload="metadata" playsinline></video>
-                                <div class="play-overlay" onclick="this.previousElementSibling.play(); this.style.display='none';">
+                                <div class="play-overlay" onclick="playStockVideo(this)">
                                     <i class="fas fa-play-circle"></i>
                                 </div>
                             `;
@@ -1582,8 +1696,7 @@
                                 <i class="fas fa-sync-alt"></i> Retry
                             </button>
                             <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;">
-                                Make sure you've exported and uploaded your JSON data from the dashboard.
-                                <br>Go to: <a href="https://afrcom-exchange-dashboard.onrender.com" target="_blank" style="color:var(--gold);">AfrCom Exchange Dashboard</a>
+                                Stock is updated from the owner dashboard.
                             </p>
                         </div>
                     `;
@@ -1591,7 +1704,51 @@
         }
 
         // ============================================================
-        // AUTO-REFRESH EVERY 60 SECONDS
+        // PLAY STOCK VIDEO
+        // ============================================================
+        function playStockVideo(overlay) {
+            const media = overlay.closest('.stock-media');
+            const video = media.querySelector('video');
+            const playBtn = overlay.querySelector('i');
+
+            if (video.paused) {
+                // Pause all other videos in stock
+                document.querySelectorAll('.stock-media video').forEach(v => {
+                    if (v !== video && !v.paused) {
+                        v.pause();
+                        const parent = v.closest('.stock-media');
+                        if (parent) {
+                            const btn = parent.querySelector('.play-overlay i');
+                            if (btn) {
+                                btn.className = 'fas fa-play-circle';
+                            }
+                            parent.querySelector('.play-overlay').style.display = 'flex';
+                        }
+                    }
+                });
+
+                video.play();
+                overlay.style.display = 'none';
+                if (playBtn) playBtn.className = 'fas fa-pause-circle';
+            } else {
+                video.pause();
+                overlay.style.display = 'flex';
+                if (playBtn) playBtn.className = 'fas fa-play-circle';
+            }
+
+            video.onended = function() {
+                overlay.style.display = 'flex';
+                if (playBtn) playBtn.className = 'fas fa-play-circle';
+            };
+
+            video.onerror = function() {
+                console.warn('Stock video failed to load');
+                overlay.innerHTML = '<i class="fas fa-exclamation-triangle" style="color:#EF476F;"></i>';
+            };
+        }
+
+        // ============================================================
+        // AUTO-REFRESH STOCK EVERY 60 SECONDS
         // ============================================================
         let refreshInterval;
 
@@ -1616,11 +1773,8 @@
         // FORMSUBMIT HANDLING
         // ============================================================
         document.getElementById('contactForm').addEventListener('submit', function(e) {
-            // FormSubmit handles the actual POST
-            // We show a toast to indicate sending
             showToast('📧 Sending your enquiry...');
 
-            // Check for success param after redirect
             setTimeout(() => {
                 const urlParams = new URLSearchParams(window.location.search);
                 if (urlParams.get('success') === 'true') {
@@ -1632,7 +1786,6 @@
             }, 500);
         });
 
-        // Check URL on load for FormSubmit response
         window.addEventListener('load', function() {
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('success') === 'true') {
@@ -1647,15 +1800,16 @@
         // INIT
         // ============================================================
         document.addEventListener('DOMContentLoaded', () => {
+            renderPreloadedVideos();
             fetchAndRenderListings();
             startAutoRefresh();
         });
 
         console.log('🌍 AfrCom Exchange Public App loaded.');
-        console.log(`📡 Fetching data from: ${DATA_URL}`);
+        console.log(`📡 Fetching stock data from: ${DATA_URL}`);
         console.log('🔄 Auto-refresh every 60 seconds.');
+        console.log('🎬 Preloaded videos loaded and ready.');
         console.log('📧 Enquiries sent to info@techpro-inv.co.za (CC: mzolisi@techpro-inv.co.za)');
-        console.log('🎬 Video support enabled — products can now include video walkthroughs.');
         console.log('🏢 Powered by MindTech Industries © 2026');
     </script>
 
